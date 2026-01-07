@@ -1,0 +1,21 @@
+{
+  "entities": [
+    {
+      "id": "string",
+      "text": "string",
+      "type": "string",
+      "type_confidence": 0.0,
+      "properties": {},
+      "source": "text|ocr|vqa"
+    }
+  ],
+  "relations": [
+    {
+      "source_id": "string",
+      "relation_type": "string",
+      "target_id": "string",
+      "confidence": 0.0,
+      "evidence": "string"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Hugging Face / model caches
+.cache/
+.huggingface/
+hf_cache/
+models/
+checkpoints/
+
+# Training artifacts
+runs/
+logs/
+outputs/
+*.ckpt
+*.safetensors
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Data safety
+data/raw/
+data/private/
+*.csv
+*.xlsx
+*.pdf
+*.png
+*.jpg
+
+# Secrets
+.env
+.env.*
+*.key
+*.token
+
+# Temporary files
+tmp/
+temp/
