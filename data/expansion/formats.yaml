@@ -1,0 +1,6 @@
+formats:
+  - clean_text
+  - table_like
+  - long_document
+  - ocr_noisy
+  - user_commentary
