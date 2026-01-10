@@ -19,3 +19,15 @@ VISUAL CONTEXT (if applicable)
 
 USER NOTES (if applicable)
 <user commentary, opinions, uncertainty>
+
+## Template Identity
+
+Every example MUST include a `template_id`.
+
+This field determines:
+- which inference rules apply
+- which relations are allowed
+- how abstention is evaluated
+- which expansion logic is valid
+
+No example may omit this field.

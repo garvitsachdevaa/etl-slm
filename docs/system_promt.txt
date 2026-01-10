@@ -7,3 +7,8 @@ Rules:
 - Output valid JSON only.
 - Follow the output schema strictly.
 - Do not include explanations or extra text.
+
+You are given a template_id.
+You must preserve the inference logic, relations, and abstention rules defined by that template.
+Do not introduce new relations.
+Do not change the output schema.

@@ -1,21 +1,89 @@
 {
-  "entities": [
-    {
-      "id": "string",
-      "text": "string",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["template_id", "entities", "relations"],
+  "properties": {
+    "template_id": {
       "type": "string",
-      "type_confidence": 0.0,
-      "properties": {},
-      "source": "text|ocr|vqa"
+      "enum": [
+        "template_01_explicit_relation",
+        "template_02_implicit_relation",
+        "template_03_abstain",
+        "template_04_mixed_format",
+        "template_05_roles_attributes",
+        "template_06_table_like",
+        "template_07_long_context",
+        "template_08_visual_context",
+        "template_09_noisy_ocr",
+        "template_10_conflicting_info",
+        "template_11_user_commentary"
+      ]
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text", "type", "type_confidence", "properties", "source"],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "type_confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "source": {
+            "type": "string",
+            "enum": ["text", "ocr", "vqa"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "relation_type",
+          "target_id",
+          "confidence",
+          "evidence"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "relation_type": {
+            "type": "string"
+          },
+          "target_id": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "evidence": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
     }
-  ],
-  "relations": [
-    {
-      "source_id": "string",
-      "relation_type": "string",
-      "target_id": "string",
-      "confidence": 0.0,
-      "evidence": "string"
-    }
-  ]
+  },
+  "additionalProperties": false
 }
