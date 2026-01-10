@@ -1,0 +1,49 @@
+# Training Configuration for Qwen 2.5 7B Fine-tuning
+
+model:
+  name: "Qwen/Qwen2.5-7B-Instruct"
+  max_seq_length: 2048
+  
+lora:
+  r: 16                    # LoRA rank
+  lora_alpha: 32           # LoRA alpha
+  lora_dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+training:
+  output_dir: "./outputs/qwen-extraction-lora"
+  num_train_epochs: 3
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-4
+  weight_decay: 0.01
+  warmup_steps: 100
+  lr_scheduler_type: "cosine"
+  logging_steps: 10
+  save_steps: 100
+  eval_steps: 100
+  save_total_limit: 3
+  fp16: false              # Set to true if you have GPU
+  bf16: false              # Set to true if you have GPU with bf16 support
+  optim: "adamw_torch"
+  gradient_checkpointing: true
+  max_grad_norm: 1.0
+  
+data:
+  train_file: "data/train/final/train.jsonl"
+  val_file: "data/train/final/val.jsonl"
+  
+wandb:
+  enabled: false           # Set to true if you want to use W&B
+  project: "qwen-extraction"
+  name: "qwen-7b-lora-v1"
