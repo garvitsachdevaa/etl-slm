@@ -1,0 +1,77 @@
+# Domain-specific entity and relation mappings
+domains:
+  corporate:
+    entity_types:
+      Company: ["Company", "Corporation", "Firm", "Business", "Enterprise"]
+      Person: ["Person", "Executive", "Leader"]
+    
+    entity_examples:
+      - ["Apple", "Microsoft", "Google", "Amazon", "Meta"]
+      - ["Tesla", "Netflix", "Adobe", "Salesforce", "Oracle"]
+      - ["IBM", "Intel", "Cisco", "Dell", "HP"]
+    
+    relations:
+      acquired: ["acquired", "purchased", "bought", "took over"]
+      merged_with: ["merged with", "consolidated with", "combined with"]
+    
+    context_words: ["deal", "transaction", "business", "corporate"]
+
+  healthcare:
+    entity_types:
+      Company: ["Hospital", "Medical Center", "Health System", "Clinic", "Healthcare Provider"]
+      Person: ["Person", "Doctor", "Medical Director", "Physician"]
+    
+    entity_examples:
+      - ["Mayo Clinic", "Cleveland Clinic", "Johns Hopkins", "Kaiser Permanente"]
+      - ["Stanford Health", "UCSF Medical", "Mass General", "NewYork-Presbyterian"]
+    
+    relations:
+      acquired: ["acquired", "merged with", "integrated", "partnered with"]
+      merged_with: ["merged with", "consolidated with", "unified with"]
+    
+    context_words: ["healthcare", "patient care", "medical services", "clinical"]
+
+  academic:
+    entity_types:
+      Company: ["University", "College", "Institute", "Research Center", "Academy"]
+      Person: ["Person", "Professor", "Dean", "Researcher"]
+    
+    entity_examples:
+      - ["MIT", "Stanford University", "Harvard University", "Yale University"]
+      - ["Princeton", "Columbia University", "Cornell", "Caltech"]
+    
+    relations:
+      acquired: ["merged with", "absorbed", "integrated", "consolidated with"]
+      merged_with: ["merged with", "unified with", "combined with"]
+    
+    context_words: ["academic", "research", "educational", "institution"]
+
+  government:
+    entity_types:
+      Company: ["Agency", "Department", "Bureau", "Office", "Commission"]
+      Person: ["Person", "Director", "Administrator", "Commissioner"]
+    
+    entity_examples:
+      - ["Department of Commerce", "FDA", "EPA", "NASA"]
+      - ["Department of Energy", "USDA", "Treasury Department", "State Department"]
+    
+    relations:
+      acquired: ["merged with", "consolidated into", "reorganized under"]
+      merged_with: ["merged with", "consolidated with", "combined with"]
+    
+    context_words: ["federal", "government", "regulatory", "public"]
+
+  finance:
+    entity_types:
+      Company: ["Bank", "Investment Firm", "Financial Institution", "Asset Manager"]
+      Person: ["Person", "CEO", "Managing Director", "Portfolio Manager"]
+    
+    entity_examples:
+      - ["JPMorgan Chase", "Goldman Sachs", "Morgan Stanley", "Bank of America"]
+      - ["Wells Fargo", "Citigroup", "BlackRock", "Vanguard"]
+    
+    relations:
+      acquired: ["acquired", "purchased", "bought", "took over"]
+      merged_with: ["merged with", "consolidated with", "combined with"]
+    
+    context_words: ["financial", "banking", "investment", "capital"]
